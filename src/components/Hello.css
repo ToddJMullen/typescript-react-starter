@@ -1,0 +1,25 @@
+/***********************
+ *	Imaginus.org ©2017
+ *
+ *	Project		: my-react-app
+ *	Author		: Todd Mullen
+ *	Document	: Hello.css
+ *	Created		: May 29, 2017, 5:47:17 PM
+ *	Description	:
+ *		Styles for
+ ***********************/
+
+
+.hello{
+	text-align: center;
+	margin: 20px;
+	font-size: 48px;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.hello button{
+	margin-left: 25px;
+	margin-right: 25px;
+	font-size: 40px;
+	min-width: 50px;
+}
+
