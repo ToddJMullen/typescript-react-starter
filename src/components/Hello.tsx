@@ -11,12 +11,17 @@ import * as React from 'react';
 import "./Hello.css";
 
 export interface Props {
- name				: string;
- enthusiasmLevel?	: number;// the ? demarks optional
+	name: string;
+	enthusiasmLevel?: number;// the ? demarks optional
+	//callback optinons
+	onIncrement?: () => void;
+	onDecrement?: () => void;
 }
 
-function Hello({name, enthusiasmLevel = 1}: Props){
-	if( enthusiasmLevel < 1 ){
+//Declare / define the Hello component implementation.
+
+function Hello({name, enthusiasmLevel = 1, onIncrement, onDecrement }: Props) {
+	if (enthusiasmLevel < 1) {
 		throw new Error("You have to be more enthusiastic!!!")
 	}
 
@@ -24,6 +29,10 @@ function Hello({name, enthusiasmLevel = 1}: Props){
 		<div className="hello">
 			<div className="greeting">
 				Hello {name + getExclamationMarks(enthusiasmLevel)}
+			</div>
+			<div>
+				<button onClick={onDecrement}>--</button>
+				<button onClick={onIncrement}>++</button>
 			</div>
 		</div>
 	);
@@ -33,6 +42,6 @@ export default Hello;
 
 // declare helpers
 
-function getExclamationMarks(num:number){
+function getExclamationMarks(num: number) {
 	return Array(num + 1).join("!");
 }
